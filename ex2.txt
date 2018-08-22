@@ -1,0 +1,32 @@
+    1  mkdir ~/week1
+    2  cd ~/week1
+    3  grep gcc
+    4  grep 'gcc'
+    5  grep 'gcc' < ls
+    6  ls | grep 'gcc'
+    7  ls
+    8  ls /usr/bin | grep 'gcc'
+    9  ls /usr/bin
+   10  ls /usr/bin | grep 'gcc' > ~/week1/ex1.txt
+   11  less ex1.txt
+   12  head ex1.txt
+   13  tail ex1.txt
+   14  ls /usr/bin | grep 'gcc' | sort -r > ~/week1/ex1.txt
+   15  ex1.txt
+   16  open ex1.txt
+   17  head ex1.txt
+   18  ls -a
+   19  mkdir useless
+   20  cd useless
+   21  mkdir moreuseless
+   22  cd ..
+   23  rm -r useless
+   24  ls -a
+   25  cat ex1.txt
+   26  pwd
+   27  man grep
+   28  man whoami
+   29  whoami
+   30  hostname
+   31  grep --help
+   32  history > ex2.txt
