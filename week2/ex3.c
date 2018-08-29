@@ -6,16 +6,14 @@
 #include <string.h>
 
 #define STRING_LENGTH 80
+#define ARRAY_LEN 10
 
 void printTriangle(int n);
 
-int main() {
+int main(int argc, char *argv[]) {
 
-    int n = 0;
-    char input[10];
-    printf("Enter n, please:");
-    scanf("%s", input);
-    sscanf(input, "%d", &n);
+    int n;
+    sscanf(argv[1], "%d", &n);
     printTriangle(n);
     printf("%d", n);
     return 0;

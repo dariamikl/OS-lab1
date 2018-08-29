@@ -9,17 +9,16 @@
 void printFigure(int n, int figureChoice);
 
 
-int main() {
+int main(int argc, char *argv[]) {
 
-    int n = 0;
+    int n;
+    sscanf(argv[1], "%d", &n);
     int figureChoice = 0;
     char input[10];
     printf("Choose a figure to print. Choices:\n 0 - square,\n 1 - triangle,\n 2 - right triangle,\n 3 - arrow\n Please, print a number.");
     scanf("%s", input);
     sscanf(input, "%d", &figureChoice);
-    printf("Enter n (height), please:");
-    scanf("%s", input);
-    sscanf(input, "%d", &n);
+
 
     printFigure(n, figureChoice);
     return 0;
@@ -27,7 +26,7 @@ int main() {
 
 
 void printTriangle(int n) {
-    int length = 2 * n + 1;
+    int length = 2 * n - 1;
     char res[length];
     int medium = n;
     int i;
