@@ -47,18 +47,17 @@ void insert_node(int value, int index) {
 void delete_node(int value) {
     struct LinkedListNode *temp = head;
     while (temp->value != value) {
-        if (temp->next == NULL){
+        if (temp->next == NULL) {
             printf("Such value was not found\n");
             return;
-        }
-        else {
+        } else {
             temp = temp->next;
 
         }
     }
 
     temp->value = temp->next->value;
-    if(temp->prev != NULL && temp->prev->prev != NULL)
+    if (temp->prev != NULL && temp->prev->prev != NULL)
         temp->prev = temp->prev->prev;
     struct LinkedListNode *next = temp->next->next;
     free(temp->next);
@@ -81,7 +80,18 @@ void print_list() {
             index++;
         }
         printf("%d (%d)<-> NULL", temp->value, index);
-        printf("\n");
+        printf("\n\n\n Back:\n");
+
+        int x = 0;
+        while (temp->next != NULL) {
+            x++;
+            if (x == 1) continue;
+
+            printf("%d (%d) <->", temp->prev->value, index);
+            temp = temp->next;
+            index++;
+        }
+
 
     }
 }
