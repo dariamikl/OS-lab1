@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 #define GREEN_COLOR  "\x1B[32m"
 #define MAGENTA_COLOR   "\x1B[35m"
@@ -37,17 +38,37 @@ void process_command(){
     char command [MAX_COMMAND_SIZE];
     char* parsed_command;
     char* command_name;
-    char* command_args[MAX_ARGS_NUMBER];
+    char* args[MAX_ARGS_NUMBER];
     int index = 0;
+    char* token;
+
 
     fgets(command, MAX_COMMAND_SIZE, stdin);
     sscanf(command, "%[^\n]", command);
-   // command_name = strtok(command, " ");
-//    while (token!=NULL){
-//        token = strtok(command, " ");
-//        strcpy(command_args[i], token);
-//    }
-      int pid = fork();
+    while (token!=NULL){
+        token = strtok(command, " ");
+        strcpy(args[index], token);
+        index++;
+    }
+    int pid;
+
+    if (command[strlen(command)] == '&')
+        pid = fork();
+    printf("%s", args[1]);
+
+    if (pid==0) {
+
+        execve(args[0], args, NULL);
+    } else{
+        wait(NULL);
+    }
+
+    execve(args[0], args, NULL);
+
+
+
+
+    }
 
 
 
@@ -57,4 +78,5 @@ void process_command(){
 
 
 
-}
+
+

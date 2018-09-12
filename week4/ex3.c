@@ -38,10 +38,3 @@ void process_command(){
 
 
 }
-
-//void print_error_message(){
-//    printf("%s>>>>", RED_COLOR);
-//
-//    printf("ERRRRROR. Try again");
-//    printf("%s\n", NORMAL_COLOR);
-//}
