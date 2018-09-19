@@ -1,13 +1,12 @@
 #!/bin/bash
 
-counter=0
-
-while [ $counter -le 100 ]
+for i in {0..100}
 do
-	if `ln num.txt num.txt.lock`;  then
-		counter=`expr $counter + 1`
-		number=`tail -1 num.txt`
-		expr $number + 1 >> num.txt
-		rm num.txt.lock
+	if `ln numbers.txt numbers.txt.lock`;  then
+		((i++))
+		number=`tail -n 1 numbers.txt`
+		((number++))
+		echo "$number" >> numbers.txt
+		rm numbers.txt.lock
 	fi
 done
