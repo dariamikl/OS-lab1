@@ -10,13 +10,14 @@
 void *threadFunc(void *arg){
     printf("Hello :) I am thread number %d\n",*(int *) arg);
 }
-
+int parallel_threads(pthread_t threads[]);
+int sequential_threads(pthread_t threads[]);
 
 int main()
 {
     pthread_t threads[MAX_THREAD_NUM];
     parallel_threads(&threads);
-    sequential_threads(&threads);
+    //sequential_threads(&threads);
 
 }
 int parallel_threads(pthread_t threads[]){
@@ -32,6 +33,7 @@ int parallel_threads(pthread_t threads[]){
         pthread_join(threads[i], NULL);
 
     }
+    pthread_exit(NULL);
 }
 int sequential_threads(pthread_t threads[]){
     int i;
@@ -42,6 +44,7 @@ int sequential_threads(pthread_t threads[]){
 
 
     }
+    pthread_exit(NULL);
 }
 
 
