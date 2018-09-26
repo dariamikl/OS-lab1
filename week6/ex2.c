@@ -13,18 +13,19 @@ int main(){
     pipe(fd); //fd is an array for file descriptors for the read end and the write end respectively
 
     int pid = fork();
-    if (pid==0){
-        close(fd[0]);
+    if (pid>0){
         write(fd[1], string_with_text, MAX_LENGTH);
         close(fd[1]);
+
     } else
-        if (pid>0){
-        close(fd[1]);
+        if (pid==0){
         read(fd[0], string_empty, MAX_LENGTH);
         printf("New string (which was empty):%s\n", string_empty);
         close(fd[0]);
 
-    }else return exit(1);
+    }
+
+    close(fd[0]);
 
 
 
