@@ -1,0 +1,2 @@
+Physical adsress is when we know the real RAM layout, that is hardware.
+Virtual adsress is when we access a page table that is mapped to the physical addresses then.

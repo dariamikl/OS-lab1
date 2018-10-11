@@ -1,0 +1,1 @@
+2^16 / 2^13 = 8 so we need to have 8 entries in the page table, from which 3 are for virtual pages (out of 2^3=8) and 5 are for offset (2^5 = 32 => up to 32)
