@@ -1,0 +1,7 @@
+1) Decrease Hit/Miss ratio: If for each page we meet it for the first time so the was no reference of that page before,
+then we increase the amount of misses because each such reference will be a miss, so
+the hit ratio tends to 0 and miss ratio tends to N, so the more unique references the better
+
+2) Increase Hit/Miss ratio: If we will query a page all the time (the same page), then the
+number of hits is increased because this page is always in memory (and there will be just one miss
+only when we referecne it the first time), so the more repeating references the better
