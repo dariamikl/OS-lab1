@@ -7,26 +7,25 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(){
+int main() {
     DIR *dir;
     struct dirent *de;
     struct stat buff;
-    char * curr;
+    char *curr;
     long long unsigned p;
     int n = -1;
 
 
-
-
     dir = opendir("./tmp/");
 
-    while((de=readdir(dir))!=NULL){
-        char  dirname [MAXNAMLEN] = "./tmp/";
-        curr = strcat(dirname,  de -> d_name);
-        int res = stat(curr,&buff);
+    while ((de = readdir(dir)) != NULL) {
+        char dirname[MAXNAMLEN] = "./tmp/";
+        curr = strcat(dirname, de->d_name);
+        int res = stat(curr, &buff);
 
-        if (buff.st_nlink>1) {
-            if (buff.st_nlink!=n) printf("\n");
+        if (buff.st_nlink > 1) {
+            //this is formatting that was added later (after the deadline)
+            if (buff.st_nlink != n) printf("\n");
             n = buff.st_nlink;
             //printf("%d ", buff.st_nlink);
             printf("%s ", de->d_name);
