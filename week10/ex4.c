@@ -5,6 +5,7 @@
 #include <sys/stat.h>
 #include <dirent.h>
 #include <stdio.h>
+#include <string.h>
 
 int main(){
     DIR *dir;
@@ -12,17 +13,30 @@ int main(){
     struct stat buff;
     char * curr;
     long long unsigned p;
+    int n = -1;
 
-    dir = opendir("./tmp");
 
-    while((de=readdir(dir))!=0){
-        curr = de -> d_name;
+
+
+    dir = opendir("./tmp/");
+
+    while((de=readdir(dir))!=NULL){
+        char  dirname [MAXNAMLEN] = "./tmp/";
+        curr = strcat(dirname,  de -> d_name);
         int res = stat(curr,&buff);
-        if (buff.st_ino != p){
-        printf("%d ",buff.st_nlink);
-        printf("%s\n",curr);
+
+        if (buff.st_nlink>1) {
+            if (buff.st_nlink!=n) printf("\n");
+            n = buff.st_nlink;
+            //printf("%d ", buff.st_nlink);
+            printf("%s ", de->d_name);
+
+
+        }
+
+
     }
-    }
+    printf("\n");
 
 
     closedir(dir);
