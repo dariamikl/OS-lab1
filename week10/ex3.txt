@@ -1,0 +1,47 @@
+total 32 #no one can execute
+-rw-r--r--  3 dariamiklashevskaya  staff   57 Oct 25 15:37 _ex1_1.txt
+-rw-r--r--  3 dariamiklashevskaya  staff   57 Oct 25 15:37 _ex1_2.txt
+-rw-rw-rw-  1 dariamiklashevskaya  staff    0 Oct 25 20:57 _ex3.txt
+-rw-r--r--  3 dariamiklashevskaya  staff   57 Oct 25 15:37 ex1.txt
+-rw-r--r--  1 dariamiklashevskaya  staff  198 Oct 25 20:58 ex2.txt
+-rw-r--r--  1 dariamiklashevskaya  staff    0 Oct 25 16:00 ex3.txt
+total 48 #user and others can do rwx (read, write, execute). Group cannot
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 _ex1_1.txt
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 _ex1_2.txt
+-rwxrw-rwx  1 dariamiklashevskaya  staff   898 Oct 25 21:01 _ex3.txt
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 ex1.txt
+-rw-r--r--  1 dariamiklashevskaya  staff   198 Oct 25 20:58 ex2.txt
+-rw-r--r--  1 dariamiklashevskaya  staff     0 Oct 25 16:00 ex3.txt
+-rw-r--r--  1 dariamiklashevskaya  staff  1440 Oct 25 21:02 ls
+total 48 # g=u, now group has the same permissions as user
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 _ex1_1.txt
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 _ex1_2.txt
+-rwxrwxrwx  1 dariamiklashevskaya  staff  2454 Oct 25 21:06 _ex3.txt
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 ex1.txt
+-rw-r--r--  1 dariamiklashevskaya  staff   198 Oct 25 20:58 ex2.txt
+-rw-r--r--  1 dariamiklashevskaya  staff     0 Oct 25 16:00 ex3.txt
+-rw-r--r--  1 dariamiklashevskaya  staff  1440 Oct 25 21:02 ls
+total 48 #660= 110 110 000 = rw- rw- ---
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 _ex1_1.txt
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 _ex1_2.txt
+-rw-rw----  1 dariamiklashevskaya  staff   905 Oct 25 21:02 _ex3.txt
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 ex1.txt
+-rw-r--r--  1 dariamiklashevskaya  staff   198 Oct 25 20:58 ex2.txt
+-rw-r--r--  1 dariamiklashevskaya  staff     0 Oct 25 16:00 ex3.txt
+-rw-r--r--  1 dariamiklashevskaya  staff  1440 Oct 25 21:02 ls
+total 48 #775 = 111 111 101 rwx rwx r-x
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 _ex1_1.txt
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 _ex1_2.txt
+-rwxrwxr-x  1 dariamiklashevskaya  staff  1392 Oct 25 21:02 _ex3.txt
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 ex1.txt
+-rw-r--r--  1 dariamiklashevskaya  staff   198 Oct 25 20:58 ex2.txt
+-rw-r--r--  1 dariamiklashevskaya  staff     0 Oct 25 16:00 ex3.txt
+-rw-r--r--  1 dariamiklashevskaya  staff  1440 Oct 25 21:02 ls
+total 48 #777 = 111 111 111 rwx rwx rwx - everyone can do everything
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 _ex1_1.txt
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 _ex1_2.txt
+-rwxrwxrwx  1 dariamiklashevskaya  staff  1879 Oct 25 21:03 _ex3.txt
+-rw-r--r--  3 dariamiklashevskaya  staff    57 Oct 25 15:37 ex1.txt
+-rw-r--r--  1 dariamiklashevskaya  staff   198 Oct 25 20:58 ex2.txt
+-rw-r--r--  1 dariamiklashevskaya  staff     0 Oct 25 16:00 ex3.txt
+-rw-r--r--  1 dariamiklashevskaya  staff  1440 Oct 25 21:02 ls
