@@ -43,11 +43,11 @@ int main(){
 
     memcpy(addr2, addr, size2);
 
-//    munmap(addr, size);
-//    close(fd);
-//
-//    munmap(addr2, size2);
-//    close(fd2);
+    munmap(addr, size);
+    close(fd);
+
+    munmap(addr2, size2);
+    close(fd2);
 
 
 
