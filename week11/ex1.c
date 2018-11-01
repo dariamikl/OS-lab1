@@ -28,7 +28,7 @@ int main(){
 
     char str [] = "This is a nice day";
 
-
+    ftruncate(fd, strlen(str)*sizeof(char));
     strcpy(addr,str);
 
     munmap(addr, size);

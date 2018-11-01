@@ -1,0 +1,11 @@
+1) In the first case we have "Hello" printed on a new line twice. This happens because first we print our Hello, withour
+a new line, then the process is forked with "Hello" in the buffer, because there was no newline, then new line is appended
+to the both processes, and printed for each so we get:
+"Hello"
+"Hello"
+
+2) In the second case, we have "Hello\n" printed. After this, we fork a process with an empty buffer now (because there was a
+newline). But since the buffer is empty, we just print a new line for each process. So we get
+"Hello"
+//empty line
+//empty line
