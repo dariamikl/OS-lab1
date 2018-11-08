@@ -1,0 +1,48 @@
+MacBook-Pro:week12 dariamiklashevskaya$ gcc copy.c && time ./a.out file.txt file2.txt
+
+real    0m7.348s
+user    0m0.819s
+sys     0m6.300s
+
+MacBook-Pro:week12 dariamiklashevskaya$ gcc copy.c -DBUF_SIZE=100 && time ./a.out file.txt file2.txt
+
+real    1m9.104s
+user    0m8.360s
+sys     0m59.300s
+
+MacBook-Pro:week12 dariamiklashevskaya$ gcc copy.c -DBUF_SIZE=1000 && time ./a.out file.txt file2.txt
+
+real    0m7.167s
+user    0m0.847s
+sys     0m6.142s
+
+MacBook-Pro:week12 dariamiklashevskaya$ gcc copy.c -DBUF_SIZE=10000 && time ./a.out file.txt file2.txt
+
+real    0m1.156s
+user    0m0.100s
+sys     0m1.043s
+
+//with O_SYNC
+
+MacBook-Pro:week12 dariamiklashevskaya$ gcc copy.c && time ./a.out file.txt file2.txt
+
+real    0m47.295s
+user    0m1.069s
+sys     0m29.213s
+
+MacBook-Pro:week12 dariamiklashevskaya$ gcc copy.c -DBUF_SIZE=1000 && time ./a.out file.txt file2.txt
+
+real    0m51.142s
+user    0m1.147s
+sys     0m31.226s
+
+MacBook-Pro:week12 dariamiklashevskaya$ gcc copy.c -DBUF_SIZE=10000 && time ./a.out file.txt file2.txt
+
+real    0m5.735s
+user    0m0.118s
+sys     0m3.424s
+
+
+
+The larger the size of the buffer the more the speed. Because we don't spend time on operating on each small particle, but instead fill in the buffer and then operating on this piece. However, if we make the size of the buffer too large, we will suffer to, because asynchronous will be tending to synchronous.
+Synchronous is considerably slower because it is like a traffic jam waiting for i/o while asynchronous is faster and it doesn't wait for time tasking a task to finish so not losing time
