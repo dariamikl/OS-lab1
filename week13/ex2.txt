@@ -1,0 +1,11 @@
+1) Recovery: it is very time and space consuming, can let data be lost or a deadlock happen, usually not practical,
+    can be used in systems where it is possible to retry the transaction
+2) Prevention:
+    no need to enter the state of deadlock, does not need to know anything about the future requests of the resources,
+    does not need to spend on detecting, each proccess is required to specify the resources they need prior to the critical
+    section. Commonly used in distributed real-time systems and embedded systems, because communication costs in avoidance is
+    very costly due to need to maintain the global states. Sometimes preemptms more than neccesary
+    deadlocks
+3) Avoidance:
+    no need to enter the state of deadlock, less restrictive, no constraints of the resources, though being
+    inefficient because of expensivity in terms of computations, low resource utiizations,
